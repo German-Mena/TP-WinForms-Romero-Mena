@@ -8,5 +8,7 @@ namespace TP_WinForms
 {
     class Categoria
     {
+        public int ID { get; set; }
+        public string Descripcion { get; set; }
     }
 }
