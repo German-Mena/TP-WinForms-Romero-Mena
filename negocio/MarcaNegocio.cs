@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using dominio;
 
-namespace TP_WinForms
+namespace negocio
 {
-    class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> listar()
         {

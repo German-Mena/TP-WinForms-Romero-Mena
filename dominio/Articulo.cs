@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinForms
+namespace dominio
 {
-    class Articulo
+    public class Articulo
     {
         public int ID { get; set; }
         public string Codigo { get; set; }
