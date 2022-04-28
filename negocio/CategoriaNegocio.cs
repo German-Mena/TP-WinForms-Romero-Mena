@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using dominio;
 
 namespace negocio
 {
-    public class MarcaNegocio
+    class CategoriaNegocio
     {
-        public List<Marca> listar()
+        public List<Categoria> listar()
         {
-            List<Marca> lista = new List<Marca>();
+            List<Categoria> lista = new List<Categoria>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("select id, descripcion as nombreMarca from MARCAS");
+                datos.setearConsulta("select id, descripcion as nombreCategoria from CATEGORIAS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Marca aux = new Marca();
+                    Categoria aux = new Categoria();
                     aux.ID = (int)datos.Lector["id"];
-                    aux.Descripcion = (string)datos.Lector["nombreMarca"];
+                    aux.Descripcion = (string)datos.Lector["nombreCategoria"];
 
                     lista.Add(aux);
                 }
@@ -40,7 +39,5 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
-
     }
 }
