@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
 
-namespace articulo
+namespace negocio
 {
     public class ArticuloNegocio
     {
@@ -22,7 +22,7 @@ namespace articulo
 
                 while (datos.Lector.Read())
                 {
-                    Marca aux = new Marca();
+                    Articulo aux = new Articulo();
                     aux.ID = (int)datos.Lector["id"];
                     aux.Descripcion = (string)datos.Lector["nombreArticulo"];
 
