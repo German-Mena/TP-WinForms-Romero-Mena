@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
 
 namespace TP_WinForms
 {
-    public partial class Form1 : Form
+    public partial class frmCatalogo : Form
     {
-        public Form1()
+        public frmCatalogo()
         {
             InitializeComponent();
+        }
+
+        private void frmCatalogo_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = negocio.listar();
+            
         }
     }
 }
