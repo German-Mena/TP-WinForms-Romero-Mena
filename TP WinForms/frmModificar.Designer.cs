@@ -193,6 +193,7 @@
             // frmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 353);
             this.Controls.Add(this.pbxArticulo);
@@ -219,6 +220,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "frmModificar";
         }
 
         #endregion
@@ -240,5 +243,7 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnCancelar;
+
     }
+
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
 
+
 namespace negocio
 {
     public class ArticuloNegocio
@@ -43,6 +44,7 @@ namespace negocio
 
                 return lista;
             }
+
             catch (Exception ex)
             {
                 throw ex;
@@ -57,7 +59,6 @@ namespace negocio
         {
             // <German>
             // Se me ocurre crear una clase helper del tipo validarDatos para verificar lo que se ingresa
-            
             AccesoDatos datos = new AccesoDatos();
 
             try
@@ -74,6 +75,27 @@ namespace negocio
                 datos.setearParametro("@ID", modificar.ID);
 
                 datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearConsulta($"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', {nuevo.Marca.ID}, {nuevo.Categoria.ID}, '{nuevo.Imagen}', {nuevo.Precio} )");
+            datos.ejecutarAccion();
+
+                try
+            {
 
             }
             catch (Exception ex)
@@ -81,10 +103,8 @@ namespace negocio
 
                 throw ex;
             }
-            finally
-            {
-                datos.cerrarConexion();
-            }
+            finally { datos.cerrarConexion(); }
+
         }
 
     }
