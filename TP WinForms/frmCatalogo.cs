@@ -19,6 +19,8 @@ namespace TP_WinForms
         public frmCatalogo()
         {
             InitializeComponent();
+            //this.BackColor = Color.Beige;
+            this.BackColor = Color.Bisque;
         }
 
         private void frmCatalogo_Load(object sender, EventArgs e)
@@ -38,6 +40,7 @@ namespace TP_WinForms
             // ---
 
             cargarImagen(listaArticulos[0].Imagen);
+            
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -70,8 +73,14 @@ namespace TP_WinForms
                 articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
                 frmDetalle detalle = new frmDetalle(articuloSeleccionado);
+                
+                // <German>
+                // Me gustaria que cuando se muestren las ventanas auxiliares, frmCatalogo se oculte.
+                // Con this.Hide() se puede hacer, pero despues no puedo mostrar otra vez esta ventana
                 detalle.ShowDialog();
             }
         }
+
+    
     }
 }

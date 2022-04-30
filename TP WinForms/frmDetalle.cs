@@ -26,6 +26,9 @@ namespace TP_WinForms
             txtMarca.ReadOnly = true;
             txtCategoria.ReadOnly = true;
             txtPrecio.ReadOnly = true;
+
+            //this.BackColor = Color.Beige;
+            this.BackColor = Color.Bisque;
         }
 
         private void frmDetalle_Load(object sender, EventArgs e)
