@@ -30,6 +30,13 @@ namespace TP_WinForms
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Imagen"].Visible = false;
 
+            // <German>
+            // Creo que es practico para no llenar de tanta info la ventana principal
+            dgvArticulos.Columns["Descripcion"].Visible = false;
+            dgvArticulos.Columns["Marca"].Visible = false;
+            dgvArticulos.Columns["Categoria"].Visible = false;
+            // ---
+
             cargarImagen(listaArticulos[0].Imagen);
         }
 
@@ -51,5 +58,20 @@ namespace TP_WinForms
             }
         }
 
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow is null)
+            {
+                MessageBox.Show("Seleccione un articulo por favor...");
+            }
+            else
+            {
+                Articulo articuloSeleccionado;
+                articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                frmDetalle detalle = new frmDetalle(articuloSeleccionado);
+                detalle.ShowDialog();
+            }
+        }
     }
 }
