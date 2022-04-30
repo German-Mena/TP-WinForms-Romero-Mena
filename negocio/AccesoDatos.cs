@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-
 namespace negocio
 {
     public class AccesoDatos
@@ -21,7 +20,7 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
+            conexion = new SqlConnection(Diccionario.CONEXION_SERVER);
             comando = new SqlCommand();
         }
 

@@ -17,7 +17,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, M.Id as IdMarca, C.Descripcion as Categoria, C.Id as IdCategoria, A.ImagenUrl, A.Precio from ARTICULOS A inner join MARCAS M on M.Id = A.IdMarca inner join CATEGORIAS C on C.Id = A.IdCategoria");
+                datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
