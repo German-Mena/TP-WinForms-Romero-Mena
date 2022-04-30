@@ -53,5 +53,39 @@ namespace negocio
             }
         }
 
+        public void modificar(Articulo modificar)
+        {
+            // <German>
+            // Se me ocurre crear una clase helper del tipo validarDatos para verificar lo que se ingresa
+            
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.MODIFICAR_ARTICULO);
+
+                datos.setearParametro("@codigo", modificar.Codigo);
+                datos.setearParametro("@nombre", modificar.Nombre);
+                datos.setearParametro("@descripcion", modificar.Descripcion);
+                datos.setearParametro("@IdMarca", modificar.Marca.ID);
+                datos.setearParametro("@IdCategoria", modificar.Categoria.ID);
+                datos.setearParametro("@imagenUrl", modificar.Imagen);
+                datos.setearParametro("@precio", modificar.Precio);
+                datos.setearParametro("@ID", modificar.ID);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

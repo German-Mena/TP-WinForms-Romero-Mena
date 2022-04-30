@@ -31,6 +31,7 @@
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbxArticulos = new System.Windows.Forms.PictureBox();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -70,11 +71,22 @@
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(125, 415);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 23);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.dgvArticulos);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pbxArticulos;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace TP_WinForms
 {
@@ -50,7 +51,7 @@ namespace TP_WinForms
             }
             catch (Exception ex)
             {
-                pbxArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU");
+                pbxArticulo.Load(Diccionario.IMAGE_NOTFOUND);
             }
         }
 

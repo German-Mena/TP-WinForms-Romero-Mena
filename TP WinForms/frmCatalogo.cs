@@ -57,7 +57,7 @@ namespace TP_WinForms
             }
             catch (Exception ex)
             {
-                pbxArticulos.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU");
+                pbxArticulos.Load(Diccionario.IMAGE_NOTFOUND);
             }
         }
 
@@ -81,6 +81,24 @@ namespace TP_WinForms
             }
         }
 
-    
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow is null)
+            {
+                MessageBox.Show("Seleccione un articulo por favor...");
+            }
+            else
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmModificar modificar = new frmModificar(seleccionado);
+
+                // <German>
+                // Me gustaria que cuando se muestren las ventanas auxiliares, frmCatalogo se oculte.
+                // Con this.Hide() se puede hacer, pero despues no puedo mostrar otra vez esta ventana
+
+                modificar.ShowDialog();
+            }
+
+        }
     }
 }
