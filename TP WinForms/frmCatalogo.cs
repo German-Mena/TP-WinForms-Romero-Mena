@@ -25,22 +25,7 @@ namespace TP_WinForms
 
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-
-            dgvArticulos.Columns["Id"].Visible = false;
-            dgvArticulos.Columns["Imagen"].Visible = false;
-
-            // <German>
-            // Creo que es practico para no llenar de tanta info la ventana principal
-            dgvArticulos.Columns["Descripcion"].Visible = false;
-            dgvArticulos.Columns["Marca"].Visible = false;
-            dgvArticulos.Columns["Categoria"].Visible = false;
-            // ---
-
-            cargarImagen(listaArticulos[0].Imagen);
-            
+            cargar();    
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -58,6 +43,33 @@ namespace TP_WinForms
             catch (Exception ex)
             {
                 pbxArticulos.Load(Diccionario.IMAGE_NOTFOUND);
+            }
+        }
+
+
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                listaArticulos = negocio.listar();
+                dgvArticulos.DataSource = listaArticulos;
+
+                dgvArticulos.Columns["Id"].Visible = false;
+                dgvArticulos.Columns["Imagen"].Visible = false;
+
+                // <German>
+                // Creo que es practico para no llenar de tanta info la ventana principal
+                dgvArticulos.Columns["Descripcion"].Visible = false;
+                dgvArticulos.Columns["Marca"].Visible = false;
+                dgvArticulos.Columns["Categoria"].Visible = false;
+                // ---
+
+                cargarImagen(listaArticulos[0].Imagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -98,6 +110,7 @@ namespace TP_WinForms
 
                 modificar.ShowDialog();
             }
+            cargar();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -105,7 +118,31 @@ namespace TP_WinForms
          
             frmAgregar alta = new frmAgregar();
             alta.ShowDialog();
-            
+            cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ///Eliminacion fisica - martin
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult result = MessageBox.Show("¿De verdad desea eliminar este articulo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);  
+                if (result == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.Codigo);
+                    cargar();
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

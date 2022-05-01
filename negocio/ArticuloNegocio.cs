@@ -107,5 +107,20 @@ namespace negocio
 
         }
 
+        public void eliminar(string codigo) 
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta($"delete from  ARTICULOS where Codigo = '{codigo}'");
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
+
     }
 }
