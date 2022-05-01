@@ -18,6 +18,9 @@ namespace TP_WinForms
         {
             this.BackColor = Color.Bisque;
             InitializeComponent();
+
+            cboMarca.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -34,42 +37,49 @@ namespace TP_WinForms
         {
             Articulo arti = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
-            AccesoDatos datos1 = new AccesoDatos();
-            AccesoDatos datos2 = new AccesoDatos();
+            //AccesoDatos datos1 = new AccesoDatos();
+            //AccesoDatos datos2 = new AccesoDatos();
             try
             {
                 arti.Nombre = txtNombre.Text;
                 arti.Codigo = txtCodigo.Text;
                 arti.Descripcion = txtDescripcion.Text;
-                arti.Marca = new Marca();
 
-                datos1.setearConsulta(Diccionario.LISTAR_MARCAS);
-                datos1.ejecutarLectura();
-                while (datos1.Lector.Read())
-                {
-                    if ((int)datos1.Lector["id"] == int.Parse(txtIDMarca.Text))
-                    {
-                        arti.Marca.ID = int.Parse(txtIDMarca.Text);
-                        arti.Marca.Descripcion = (string)datos1.Lector["nombreMarca"];
-                        break;
-                    }
-                }
-                datos1.cerrarConexion();
+                arti.Marca = new Marca();
+                arti.Marca = (Marca)cboMarca.SelectedItem;
+
+                // <German>
+                // Reemplazo codigo para capturar ID de marca desde dropDownList
+
+                //datos1.setearConsulta(Diccionario.LISTAR_MARCAS);
+                //datos1.ejecutarLectura();
+                //while (datos1.Lector.Read())
+                //{
+                //    if ((int)datos1.Lector["id"] == int.Parse(txtIDMarca.Text))
+                //    {
+                //        arti.Marca.ID = int.Parse(txtIDMarca.Text);
+                //        arti.Marca.Descripcion = (string)datos1.Lector["nombreMarca"];
+                //        break;
+                //    }
+                //}
+                //datos1.cerrarConexion();
 
                 arti.Categoria = new Categoria();
+                arti.Categoria = (Categoria)cboCategoria.SelectedItem;
 
-                datos2.setearConsulta(Diccionario.LISTAR_CATEGORIAS);
-                datos2.ejecutarLectura();
-                while (datos2.Lector.Read())
-                {
-                    if ((int)datos2.Lector["id"] == int.Parse(txtIDCategoria.Text))
-                    {
-                        arti.Categoria.ID = int.Parse(txtIDCategoria.Text);
-                        arti.Categoria.Descripcion = (string)datos2.Lector["nombreCategoria"];
-                        break;
-                    }
-                }
-                datos2.cerrarConexion();
+
+                //datos2.setearConsulta(Diccionario.LISTAR_CATEGORIAS);
+                //datos2.ejecutarLectura();
+                //while (datos2.Lector.Read())
+                //{
+                //    if ((int)datos2.Lector["id"] == int.Parse(txtIDCategoria.Text))
+                //    {
+                //        arti.Categoria.ID = int.Parse(txtIDCategoria.Text);
+                //        arti.Categoria.Descripcion = (string)datos2.Lector["nombreCategoria"];
+                //        break;
+                //    }
+                //}
+                //datos2.cerrarConexion();
                 
                 arti.Imagen = txtURLImagen.Text;
                 arti.Precio = Decimal.Parse(txtPrecio.Text);
@@ -87,6 +97,24 @@ namespace TP_WinForms
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            try
+            {
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "ID";
+                cboMarca.DisplayMember = "Descripcion";
+
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "ID";
+                cboCategoria.DisplayMember = "Descripcion";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
