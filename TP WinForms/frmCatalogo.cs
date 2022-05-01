@@ -30,8 +30,12 @@ namespace TP_WinForms
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen);
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.Imagen);
+            } 
+
         }
 
         private void cargarImagen(string imagen)
@@ -55,15 +59,7 @@ namespace TP_WinForms
                 listaArticulos = negocio.listar();
                 dgvArticulos.DataSource = listaArticulos;
 
-                dgvArticulos.Columns["Id"].Visible = false;
-                dgvArticulos.Columns["Imagen"].Visible = false;
-
-                // <German>
-                // Creo que es practico para no llenar de tanta info la ventana principal
-                dgvArticulos.Columns["Descripcion"].Visible = false;
-                dgvArticulos.Columns["Marca"].Visible = false;
-                dgvArticulos.Columns["Categoria"].Visible = false;
-                // ---
+                ocultarColumnas();
 
                 cargarImagen(listaArticulos[0].Imagen);
             }
@@ -71,6 +67,18 @@ namespace TP_WinForms
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["Imagen"].Visible = false;
+
+            // <German>
+            // Creo que es practico para no llenar de tanta info la ventana principal
+            dgvArticulos.Columns["Descripcion"].Visible = false;
+            dgvArticulos.Columns["Marca"].Visible = false;
+            dgvArticulos.Columns["Categoria"].Visible = false;
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -143,6 +151,23 @@ namespace TP_WinForms
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+            if (filtro != "")
+            {
+            listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
