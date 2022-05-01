@@ -23,9 +23,16 @@ namespace TP_WinForms
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void cargarImagen(string imagen)
         {
-
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load(Diccionario.IMAGE_NOTFOUND);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -120,49 +127,11 @@ namespace TP_WinForms
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void txtURLImagen_Leave(object sender, EventArgs e)
         {
-
+            cargarImagen(txtURLImagen.Text);
         }
 
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtIDCategoria_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIDMarca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -73,8 +73,6 @@ namespace TP_WinForms
             }
         }
 
-
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -118,6 +116,11 @@ namespace TP_WinForms
             {
                 this.Close();
             }
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
         }
     }
 }
