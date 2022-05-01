@@ -16,6 +16,7 @@ namespace TP_WinForms
     {
         public frmAgregar()
         {
+            this.BackColor = Color.Bisque;
             InitializeComponent();
         }
 
