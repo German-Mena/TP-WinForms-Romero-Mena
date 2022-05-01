@@ -20,6 +20,8 @@ namespace negocio
 
         public static string MODIFICAR_ARTICULO = "update articulos set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, ImagenUrl = @imagenUrl, Precio = @precio where ID = @ID";
 
+        public static string AGREGAR_ARTICULO = "insert into articulos values (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagen, @precio)";
 
+        public static string ELIMINAR_ARTICULO = "delete from articulos where codigo = @codigo";
     }
 }

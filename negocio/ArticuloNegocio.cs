@@ -91,34 +91,60 @@ namespace negocio
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.setearConsulta($"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', {nuevo.Marca.ID}, {nuevo.Categoria.ID}, '{nuevo.Imagen}', {nuevo.Precio} )");
-            datos.ejecutarAccion();
 
-                try
+            try
             {
+                // <German>
+                // Modifica consulta usando Propiedad de la clase Diccionario y el metodo setearParametro de la clase AccesoDatos
 
+                //datos.setearConsulta($"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', {nuevo.Marca.ID}, {nuevo.Categoria.ID}, '{nuevo.Imagen}', {nuevo.Precio} )");
+
+                datos.setearConsulta(Diccionario.AGREGAR_ARTICULO);
+
+                datos.setearParametro("@codigo", nuevo.Codigo);
+                datos.setearParametro("@nombre", nuevo.Nombre);
+                datos.setearParametro("@descripcion", nuevo.Descripcion);
+                datos.setearParametro("@idMarca", nuevo.Marca.ID);
+                datos.setearParametro("@idCategoria", nuevo.Categoria.ID);
+                datos.setearParametro("@imagen", nuevo.Imagen);
+                datos.setearParametro("@precio", nuevo.Precio);
+
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
         }
 
         public void eliminar(string codigo) 
         {
+            AccesoDatos datos = new AccesoDatos();
+            
             try
             {
-                AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta($"delete from  ARTICULOS where Codigo = '{codigo}'");
+
+                // <German>
+                // Modifica consulta usando Propiedad de la clase Diccionario y el metodo setearParametro de la clase AccesoDatos
+
+                //datos.setearConsulta($"delete from  ARTICULOS where Codigo = '{codigo}'");
+
+                datos.setearConsulta(Diccionario.ELIMINAR_ARTICULO);
+                datos.setearParametro("@codigo", codigo);
                 datos.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         } 
 

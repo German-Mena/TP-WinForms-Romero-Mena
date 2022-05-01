@@ -67,6 +67,8 @@ namespace TP_WinForms
                 arti.Categoria = new Categoria();
                 arti.Categoria = (Categoria)cboCategoria.SelectedItem;
 
+                // <German>
+                // Reemplazo codigo para capturar ID de Categoria desde dropDownList
 
                 //datos2.setearConsulta(Diccionario.LISTAR_CATEGORIAS);
                 //datos2.ejecutarLectura();
@@ -80,7 +82,7 @@ namespace TP_WinForms
                 //    }
                 //}
                 //datos2.cerrarConexion();
-                
+
                 arti.Imagen = txtURLImagen.Text;
                 arti.Precio = Decimal.Parse(txtPrecio.Text);
 
