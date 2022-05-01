@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAltaArticulo.cs">
+    <Compile Include="frmAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAltaArticulo.Designer.cs">
-      <DependentUpon>frmAltaArticulo.cs</DependentUpon>
+    <Compile Include="frmAgregar.Designer.cs">
+      <DependentUpon>frmAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCatalogo.cs">
       <SubType>Form</SubType>
@@ -73,8 +73,8 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAltaArticulo.resx">
-      <DependentUpon>frmAltaArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="frmAgregar.resx">
+      <DependentUpon>frmAgregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCatalogo.resx">
       <DependentUpon>frmCatalogo.cs</DependentUpon>

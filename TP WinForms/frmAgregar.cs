@@ -12,9 +12,9 @@ using negocio;
 
 namespace TP_WinForms
 {
-    public partial class frmAltaArticulo : Form
+    public partial class frmAgregar : Form
     {
-        public frmAltaArticulo()
+        public frmAgregar()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace TP_WinForms
 {
-    partial class frmAltaArticulo
+    partial class frmAgregar
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 62);
+            this.label1.Location = new System.Drawing.Point(27, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 99);
+            this.label2.Location = new System.Drawing.Point(27, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 135);
+            this.label3.Location = new System.Drawing.Point(27, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 2;
@@ -78,32 +78,32 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(329, 27);
+            this.txtNombre.Location = new System.Drawing.Point(208, 27);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(103, 20);
             this.txtNombre.TabIndex = 3;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(329, 99);
+            this.txtDescripcion.Location = new System.Drawing.Point(208, 77);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(103, 20);
             this.txtDescripcion.TabIndex = 4;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // txtIDMarca
             // 
-            this.txtIDMarca.Location = new System.Drawing.Point(329, 135);
+            this.txtIDMarca.Location = new System.Drawing.Point(208, 103);
             this.txtIDMarca.Name = "txtIDMarca";
-            this.txtIDMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtIDMarca.Size = new System.Drawing.Size(103, 20);
             this.txtIDMarca.TabIndex = 5;
             this.txtIDMarca.TextChanged += new System.EventHandler(this.txtIDMarca_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 173);
+            this.label4.Location = new System.Drawing.Point(27, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 6;
@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 208);
+            this.label5.Location = new System.Drawing.Point(27, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 13);
             this.label5.TabIndex = 7;
@@ -122,23 +122,23 @@
             // 
             // txtIDCategoria
             // 
-            this.txtIDCategoria.Location = new System.Drawing.Point(329, 173);
+            this.txtIDCategoria.Location = new System.Drawing.Point(208, 129);
             this.txtIDCategoria.Name = "txtIDCategoria";
-            this.txtIDCategoria.Size = new System.Drawing.Size(100, 20);
+            this.txtIDCategoria.Size = new System.Drawing.Size(103, 20);
             this.txtIDCategoria.TabIndex = 8;
             this.txtIDCategoria.TextChanged += new System.EventHandler(this.txtIDCategoria_TextChanged);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(329, 246);
+            this.txtPrecio.Location = new System.Drawing.Point(208, 181);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(103, 20);
             this.txtPrecio.TabIndex = 9;
             this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(119, 287);
+            this.btnAceptar.Location = new System.Drawing.Point(70, 223);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 10;
@@ -148,7 +148,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(267, 287);
+            this.btnCancelar.Location = new System.Drawing.Point(191, 223);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
@@ -159,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 27);
+            this.label6.Location = new System.Drawing.Point(27, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 13);
             this.label6.TabIndex = 12;
@@ -167,15 +167,15 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(329, 62);
+            this.txtCodigo.Location = new System.Drawing.Point(208, 51);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(103, 20);
             this.txtCodigo.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 246);
+            this.label7.Location = new System.Drawing.Point(27, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 14;
@@ -183,16 +183,16 @@
             // 
             // txtURLImagen
             // 
-            this.txtURLImagen.Location = new System.Drawing.Point(329, 208);
+            this.txtURLImagen.Location = new System.Drawing.Point(208, 155);
             this.txtURLImagen.Name = "txtURLImagen";
-            this.txtURLImagen.Size = new System.Drawing.Size(100, 20);
+            this.txtURLImagen.Size = new System.Drawing.Size(103, 20);
             this.txtURLImagen.TabIndex = 15;
             // 
-            // frmAltaArticulo
+            // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 341);
+            this.ClientSize = new System.Drawing.Size(341, 269);
             this.Controls.Add(this.txtURLImagen);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCodigo);
@@ -209,7 +209,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmAltaArticulo";
+            this.Name = "frmAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);

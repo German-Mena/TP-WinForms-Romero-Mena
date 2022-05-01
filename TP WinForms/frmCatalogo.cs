@@ -103,7 +103,7 @@ namespace TP_WinForms
         private void btnAgregar_Click(object sender, EventArgs e)
         {
          
-            frmAltaArticulo alta = new frmAltaArticulo();
+            frmAgregar alta = new frmAgregar();
             alta.ShowDialog();
             
         }
