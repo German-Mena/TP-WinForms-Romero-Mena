@@ -73,6 +73,7 @@ namespace TP_WinForms
         {
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Imagen"].Visible = false;
+            dgvArticulos.Columns["Estado"].Visible = false;
 
             // <German>
             // Creo que es practico para no llenar de tanta info la ventana principal
@@ -140,7 +141,7 @@ namespace TP_WinForms
                 if (result == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                    negocio.eliminar(seleccionado.Codigo);
+                    negocio.eliminar(seleccionado.ID);
                     cargar();
 
                 }
@@ -171,6 +172,36 @@ namespace TP_WinForms
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult result = MessageBox.Show("¿De verdad desea dar de baja este articulo?", "Baja de articulo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.baja(seleccionado.ID);
+                    cargar();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnVerArtBaja_Click(object sender, EventArgs e)
+        {
+            frmArticulosBaja baja = new frmArticulosBaja();
+            baja.ShowDialog();
+            cargar();
         }
     }
 }

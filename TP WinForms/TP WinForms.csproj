@@ -52,6 +52,12 @@
     <Compile Include="frmAgregar.Designer.cs">
       <DependentUpon>frmAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArticulosBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticulosBaja.Designer.cs">
+      <DependentUpon>frmArticulosBaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAgregar.resx">
       <DependentUpon>frmAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticulosBaja.resx">
+      <DependentUpon>frmArticulosBaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCatalogo.resx">
       <DependentUpon>frmCatalogo.cs</DependentUpon>

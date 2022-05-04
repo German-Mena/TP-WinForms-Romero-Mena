@@ -11,7 +11,7 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> listar()
+        public List<Articulo> listar(bool estado = true)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
@@ -25,7 +25,6 @@ namespace negocio
                 {
                     Articulo aux = new Articulo();
 
-
                     aux.ID = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
@@ -38,8 +37,11 @@ namespace negocio
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Imagen = (string)datos.Lector["ImagenURL"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Estado = (bool)datos.Lector["Estado"];
 
-                    lista.Add(aux);
+                    if (estado == false && aux.Estado == false) lista.Add(aux);
+                    if (estado == true && aux.Estado == true) lista.Add(aux);
+
                 }
 
                 return lista;
@@ -108,6 +110,7 @@ namespace negocio
                 datos.setearParametro("@idCategoria", nuevo.Categoria.ID);
                 datos.setearParametro("@imagen", nuevo.Imagen);
                 datos.setearParametro("@precio", nuevo.Precio);
+                datos.setearParametro("@estado", 1);
 
                 datos.ejecutarAccion();
             }
@@ -122,7 +125,43 @@ namespace negocio
 
         }
 
-        public void eliminar(string codigo) 
+        public void baja(int ID)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.BAJA_ARTICULO);
+                datos.setearParametro("@ID", ID);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public void alta(int ID)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.ALTA_ARTICULO);
+                datos.setearParametro("@ID", ID);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public void eliminar(int ID) 
         {
             AccesoDatos datos = new AccesoDatos();
             
@@ -135,7 +174,7 @@ namespace negocio
                 //datos.setearConsulta($"delete from  ARTICULOS where Codigo = '{codigo}'");
 
                 datos.setearConsulta(Diccionario.ELIMINAR_ARTICULO);
-                datos.setearParametro("@codigo", codigo);
+                datos.setearParametro("@ID", ID);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

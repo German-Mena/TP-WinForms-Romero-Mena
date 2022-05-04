@@ -33,10 +33,11 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnFiltro = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.btnVerArtBaja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -94,24 +95,13 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(225, 415);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(103, 23);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(336, 415);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(103, 23);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label1
             // 
@@ -126,7 +116,7 @@
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(71, 37);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(225, 22);
             this.txtFiltro.TabIndex = 7;
@@ -134,7 +124,7 @@
             // btnFiltro
             // 
             this.btnFiltro.Location = new System.Drawing.Point(305, 34);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(100, 28);
             this.btnFiltro.TabIndex = 8;
@@ -142,15 +132,36 @@
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
+            // btnBaja
+            // 
+            this.btnBaja.Location = new System.Drawing.Point(335, 415);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(98, 23);
+            this.btnBaja.TabIndex = 9;
+            this.btnBaja.Text = "Dar de baja";
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            // 
+            // btnVerArtBaja
+            // 
+            this.btnVerArtBaja.Location = new System.Drawing.Point(439, 415);
+            this.btnVerArtBaja.Name = "btnVerArtBaja";
+            this.btnVerArtBaja.Size = new System.Drawing.Size(162, 23);
+            this.btnVerArtBaja.TabIndex = 10;
+            this.btnVerArtBaja.Text = "Ver Articulos de baja";
+            this.btnVerArtBaja.UseVisualStyleBackColor = true;
+            this.btnVerArtBaja.Click += new System.EventHandler(this.btnVerArtBaja_Click);
+            // 
             // frmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerArtBaja);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnDetalle);
@@ -175,10 +186,11 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.Button btnBaja;
+        private System.Windows.Forms.Button btnVerArtBaja;
     }
 }
 
