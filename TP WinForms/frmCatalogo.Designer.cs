@@ -55,27 +55,27 @@
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(483, 234);
+            this.dgvArticulos.Size = new System.Drawing.Size(475, 234);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pbxArticulos
             // 
             this.pbxArticulos.AccessibleName = "pbxArticulos";
-            this.pbxArticulos.Location = new System.Drawing.Point(501, 64);
+            this.pbxArticulos.Location = new System.Drawing.Point(493, 64);
             this.pbxArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxArticulos.Name = "pbxArticulos";
-            this.pbxArticulos.Size = new System.Drawing.Size(287, 234);
+            this.pbxArticulos.Size = new System.Drawing.Size(244, 234);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulos.TabIndex = 1;
             this.pbxArticulos.TabStop = false;
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(12, 415);
+            this.btnDetalle.Location = new System.Drawing.Point(12, 344);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(107, 23);
+            this.btnDetalle.Size = new System.Drawing.Size(103, 23);
             this.btnDetalle.TabIndex = 2;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(125, 415);
+            this.btnModificar.Location = new System.Drawing.Point(12, 371);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(93, 23);
+            this.btnModificar.Size = new System.Drawing.Size(103, 23);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(225, 415);
+            this.btnAgregar.Location = new System.Drawing.Point(122, 344);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(103, 23);
@@ -134,9 +134,9 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(335, 415);
+            this.btnBaja.Location = new System.Drawing.Point(121, 371);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(98, 23);
+            this.btnBaja.Size = new System.Drawing.Size(103, 23);
             this.btnBaja.TabIndex = 9;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -144,9 +144,9 @@
             // 
             // btnVerArtBaja
             // 
-            this.btnVerArtBaja.Location = new System.Drawing.Point(439, 415);
+            this.btnVerArtBaja.Location = new System.Drawing.Point(11, 399);
             this.btnVerArtBaja.Name = "btnVerArtBaja";
-            this.btnVerArtBaja.Size = new System.Drawing.Size(162, 23);
+            this.btnVerArtBaja.Size = new System.Drawing.Size(213, 23);
             this.btnVerArtBaja.TabIndex = 10;
             this.btnVerArtBaja.Text = "Ver Articulos de baja";
             this.btnVerArtBaja.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(749, 480);
             this.Controls.Add(this.btnVerArtBaja);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnFiltro);
@@ -167,7 +167,9 @@
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.dgvArticulos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "frmCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogo";
