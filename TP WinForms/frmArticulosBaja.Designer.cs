@@ -32,6 +32,7 @@
             this.pbxArticulos = new System.Windows.Forms.PictureBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCatalogo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.btnAlta.Location = new System.Drawing.Point(12, 317);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(100, 23);
+            this.btnAlta.Size = new System.Drawing.Size(116, 23);
             this.btnAlta.TabIndex = 2;
             this.btnAlta.Text = "Dar de alta";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -78,22 +79,36 @@
             // 
             this.btnEliminar.Location = new System.Drawing.Point(12, 346);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(116, 23);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnCatalogo
+            // 
+            this.btnCatalogo.Location = new System.Drawing.Point(13, 375);
+            this.btnCatalogo.Name = "btnCatalogo";
+            this.btnCatalogo.Size = new System.Drawing.Size(115, 23);
+            this.btnCatalogo.TabIndex = 4;
+            this.btnCatalogo.Text = "Ver Catalogo";
+            this.btnCatalogo.UseVisualStyleBackColor = true;
+            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
             // 
             // frmArticulosBaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 446);
+            this.Controls.Add(this.btnCatalogo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.dgvArticulos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmArticulosBaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos de baja";
             this.Load += new System.EventHandler(this.frmArticulosBaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
@@ -108,5 +123,6 @@
         private System.Windows.Forms.PictureBox pbxArticulos;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCatalogo;
     }
 }

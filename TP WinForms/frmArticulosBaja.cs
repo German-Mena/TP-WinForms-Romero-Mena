@@ -50,6 +50,12 @@ namespace TP_WinForms
                 ocultarColumnas();
                 cargarImagen(listaArticulos[0].Imagen);
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                //MessageBox.Show("No hay articulos dados de baja hasta el momento");
+                MessageBox.Show("No hay articulos dados de baja hasta el momento.","Atención",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -124,6 +130,11 @@ namespace TP_WinForms
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -60,8 +60,11 @@ namespace TP_WinForms
                 dgvArticulos.DataSource = listaArticulos;
 
                 ocultarColumnas();
-
                 cargarImagen(listaArticulos[0].Imagen);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("No hay articulos dados de alta hasta el momento","Atención",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
