@@ -25,7 +25,10 @@ namespace TP_WinForms
 
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
-            cargar();    
+            cargar();
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripcion");
+            cboCampo.Items.Add("Precio");
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -159,22 +162,21 @@ namespace TP_WinForms
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            List<Articulo> listaFiltrada;
-            string filtro = txtFiltro.Text;
-            if (filtro != "")
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
             {
-                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
-                x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
-                x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
-                x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
             }
-            else
+            catch (Exception ex)
             {
-                listaFiltrada = listaArticulos;
+                MessageBox.Show(ex.ToString());
             }
-            dgvArticulos.DataSource = null;
-            dgvArticulos.DataSource = listaFiltrada;
-            ocultarColumnas();
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
@@ -225,6 +227,25 @@ namespace TP_WinForms
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
         }
     }
 }
