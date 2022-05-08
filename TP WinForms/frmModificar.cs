@@ -78,9 +78,65 @@ namespace TP_WinForms
             this.Close();
         }
 
+        private bool validarModificar()
+        {
+            if (!(verificarCodigo(txtCodigo.Text)))
+            {
+                MessageBox.Show("Por favor, escriba un codigo apropiado (Primer caracter letra, segundo y tercer caracter numeros");
+                return true;
+            }
+
+            if (!(soloNumeros(txtPrecio.Text)))
+            {
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo [Precio] para poder realizar la siguiente operacion");
+                return true;
+            }
+            return false;
+        }
+
+        private bool verificarCodigo(string aleer)
+        {
+            int i = 0;
+            foreach (char car in aleer)
+            {
+                i++;
+                if ((i == 1) && (!(char.IsLetter(car)))) return false;
+                if ((i > 1) && (!(char.IsNumber(car)))) return false;
+                if (i > 3) return false;
+            }
+            return true;
+        }
+
+        private bool soloNumeros(string aleer)
+        {
+            bool coma = false;
+            foreach (char c in aleer)
+            {
+                if ((c == ',') && (coma == false))
+                {
+                    coma = true;
+                    continue;
+                }
+                else if ((c == ',') &&(coma == true))
+                {
+                    return false;
+                }
+                else if (!(char.IsNumber(c))) return false;
+
+            }
+            return true;
+        }
+
+
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
+
+            if (validarModificar())
+            {
+                return;
+            }
 
             try
             {
