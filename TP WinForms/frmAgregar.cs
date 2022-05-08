@@ -40,8 +40,53 @@ namespace TP_WinForms
             Close();
         }
 
+        private bool validarAgregar()
+        {
+            if (!(verificarCodigo(txtCodigo.Text)))
+            {
+                MessageBox.Show("Por favor, escriba un codigo apropiado (Primer caracter letra, segundo y tercer caracter numeros");
+                return true;
+            }
+
+            if (!(soloNumeros(txtPrecio.Text)))
+            {
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo [Precio] para poder realizar la siguiente operacion");
+                return true;
+            }
+            return false;
+        }
+
+        private bool verificarCodigo(string aleer)
+        {
+            int i = 0;
+            foreach(char car in aleer)
+            {
+                i++;
+                if ((i == 1) && (!(char.IsLetter(car)))) return false;
+                if ((i > 1) && (!(char.IsNumber(car)))) return false;
+                if (i > 3) return false;
+            }
+            return true;
+        }
+
+        private bool soloNumeros(string aleer)
+        {
+            foreach (char c in aleer)
+            {
+                if (!(char.IsNumber(c))) return false;
+
+            }
+            return true;
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            if (validarAgregar())
+            {
+                return;
+            }
+
             Articulo arti = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
             //AccesoDatos datos1 = new AccesoDatos();
