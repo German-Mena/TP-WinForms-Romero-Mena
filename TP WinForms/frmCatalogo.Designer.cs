@@ -48,34 +48,34 @@
             this.dgvArticulos.AccessibleName = "dgvListaArticulos";
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 64);
+            this.dgvArticulos.Location = new System.Drawing.Point(14, 80);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(475, 234);
+            this.dgvArticulos.Size = new System.Drawing.Size(534, 292);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pbxArticulos
             // 
             this.pbxArticulos.AccessibleName = "pbxArticulos";
-            this.pbxArticulos.Location = new System.Drawing.Point(493, 64);
+            this.pbxArticulos.Location = new System.Drawing.Point(555, 80);
             this.pbxArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxArticulos.Name = "pbxArticulos";
-            this.pbxArticulos.Size = new System.Drawing.Size(244, 234);
+            this.pbxArticulos.Size = new System.Drawing.Size(274, 292);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulos.TabIndex = 1;
             this.pbxArticulos.TabStop = false;
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(12, 344);
+            this.btnDetalle.Location = new System.Drawing.Point(14, 430);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(103, 23);
+            this.btnDetalle.Size = new System.Drawing.Size(116, 29);
             this.btnDetalle.TabIndex = 2;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(12, 371);
+            this.btnModificar.Location = new System.Drawing.Point(14, 464);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(103, 23);
+            this.btnModificar.Size = new System.Drawing.Size(116, 29);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(122, 344);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(137, 430);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(103, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(116, 29);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -106,27 +106,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 41);
+            this.label1.Location = new System.Drawing.Point(18, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Filtro:";
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(71, 37);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFiltro.Location = new System.Drawing.Point(80, 46);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(225, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(253, 26);
             this.txtFiltro.TabIndex = 7;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(305, 34);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFiltro.Location = new System.Drawing.Point(343, 42);
+            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(100, 28);
+            this.btnFiltro.Size = new System.Drawing.Size(112, 35);
             this.btnFiltro.TabIndex = 8;
             this.btnFiltro.Text = "Buscar";
             this.btnFiltro.UseVisualStyleBackColor = true;
@@ -134,9 +135,10 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(121, 371);
+            this.btnBaja.Location = new System.Drawing.Point(136, 464);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(103, 23);
+            this.btnBaja.Size = new System.Drawing.Size(116, 29);
             this.btnBaja.TabIndex = 9;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -144,9 +146,10 @@
             // 
             // btnVerArtBaja
             // 
-            this.btnVerArtBaja.Location = new System.Drawing.Point(11, 399);
+            this.btnVerArtBaja.Location = new System.Drawing.Point(12, 499);
+            this.btnVerArtBaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerArtBaja.Name = "btnVerArtBaja";
-            this.btnVerArtBaja.Size = new System.Drawing.Size(213, 23);
+            this.btnVerArtBaja.Size = new System.Drawing.Size(240, 29);
             this.btnVerArtBaja.TabIndex = 10;
             this.btnVerArtBaja.Text = "Ver Articulos de baja";
             this.btnVerArtBaja.UseVisualStyleBackColor = true;
@@ -154,9 +157,9 @@
             // 
             // frmCatalogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 480);
+            this.ClientSize = new System.Drawing.Size(843, 600);
             this.Controls.Add(this.btnVerArtBaja);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnFiltro);

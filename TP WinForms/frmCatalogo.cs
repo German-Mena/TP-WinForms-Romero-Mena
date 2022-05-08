@@ -206,5 +206,25 @@ namespace TP_WinForms
             baja.ShowDialog();
             cargar();
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+            if (filtro != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
+                x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
+                x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
+                x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
     }
 }
