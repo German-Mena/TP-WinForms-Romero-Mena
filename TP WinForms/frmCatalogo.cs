@@ -166,6 +166,11 @@ namespace TP_WinForms
 
             try
             {
+                if (validarFiltro() == true)
+                {
+                    return;
+                };
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
@@ -177,6 +182,45 @@ namespace TP_WinForms
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        public bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione campo a filtrar");
+                return true;
+            }
+            else if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione criterio con el que filtrar");
+                return true;
+            }
+            else if (cboCampo.Text == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese numeros para poder realizar la operacion");
+                    return true;
+                }
+
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                { 
+                    MessageBox.Show("Por favor, ingrese solo numeros para poder realizar la siguiente operacion");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool soloNumeros(string aleer)
+        {
+            foreach(char c in aleer)
+            {
+                if (!(char.IsNumber(c))) return false;
+                
+            }
+            return true;
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
