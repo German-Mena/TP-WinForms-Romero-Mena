@@ -40,6 +40,7 @@ namespace TP_WinForms
             Close();
         }
 
+
         private bool validarAgregar()
         {
             if (!(verificarCodigo(txtCodigo.Text)))
@@ -71,9 +72,19 @@ namespace TP_WinForms
 
         private bool soloNumeros(string aleer)
         {
+            bool coma = false;
             foreach (char c in aleer)
             {
-                if (!(char.IsNumber(c))) return false;
+                if ((c == ',') && (coma == false))
+                {
+                    coma = true;
+                    continue;
+                }
+                else if ((c == ',') && (coma == true))
+                {
+                    return false;
+                }
+                else if (!(char.IsNumber(c))) return false;
 
             }
             return true;

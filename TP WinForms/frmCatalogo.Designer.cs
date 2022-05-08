@@ -44,6 +44,7 @@
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -78,10 +79,10 @@
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(14, 430);
+            this.btnDetalle.Location = new System.Drawing.Point(14, 422);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(116, 29);
+            this.btnDetalle.Size = new System.Drawing.Size(116, 37);
             this.btnDetalle.TabIndex = 2;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -89,10 +90,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(260, 430);
+            this.btnModificar.Location = new System.Drawing.Point(260, 422);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(116, 29);
+            this.btnModificar.Size = new System.Drawing.Size(116, 37);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -100,10 +101,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(137, 430);
+            this.btnAgregar.Location = new System.Drawing.Point(137, 422);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(116, 29);
+            this.btnAgregar.Size = new System.Drawing.Size(116, 37);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -130,7 +131,7 @@
             // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(695, 498);
+            this.btnFiltro.Location = new System.Drawing.Point(718, 466);
             this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(112, 35);
@@ -141,10 +142,10 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(382, 430);
+            this.btnBaja.Location = new System.Drawing.Point(382, 422);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(116, 29);
+            this.btnBaja.Size = new System.Drawing.Size(116, 37);
             this.btnBaja.TabIndex = 9;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -152,10 +153,10 @@
             // 
             // btnVerArtBaja
             // 
-            this.btnVerArtBaja.Location = new System.Drawing.Point(14, 465);
+            this.btnVerArtBaja.Location = new System.Drawing.Point(589, 422);
             this.btnVerArtBaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerArtBaja.Name = "btnVerArtBaja";
-            this.btnVerArtBaja.Size = new System.Drawing.Size(240, 29);
+            this.btnVerArtBaja.Size = new System.Drawing.Size(240, 37);
             this.btnVerArtBaja.TabIndex = 10;
             this.btnVerArtBaja.Text = "Ver Articulos de baja";
             this.btnVerArtBaja.UseVisualStyleBackColor = true;
@@ -165,7 +166,7 @@
             // 
             this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(95, 501);
+            this.cboCampo.Location = new System.Drawing.Point(94, 469);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(121, 28);
             this.cboCampo.TabIndex = 11;
@@ -174,7 +175,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 505);
+            this.label2.Location = new System.Drawing.Point(17, 473);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 12;
@@ -183,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 505);
+            this.label3.Location = new System.Drawing.Point(228, 473);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 13;
@@ -193,7 +194,7 @@
             // 
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(305, 501);
+            this.cboCriterio.Location = new System.Drawing.Point(304, 469);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(121, 28);
             this.cboCriterio.TabIndex = 14;
@@ -201,7 +202,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(439, 505);
+            this.label4.Location = new System.Drawing.Point(438, 473);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 15;
@@ -209,16 +210,27 @@
             // 
             // txtFiltroAvanzado
             // 
-            this.txtFiltroAvanzado.Location = new System.Drawing.Point(500, 502);
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(499, 470);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
-            this.txtFiltroAvanzado.Size = new System.Drawing.Size(182, 26);
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(211, 26);
             this.txtFiltroAvanzado.TabIndex = 16;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(555, 39);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(160, 36);
+            this.btnReset.TabIndex = 17;
+            this.btnReset.Text = "Resetear Catalogo";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 575);
+            this.ClientSize = new System.Drawing.Size(843, 521);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtFiltroAvanzado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboCriterio);
@@ -267,6 +279,7 @@
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFiltroAvanzado;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

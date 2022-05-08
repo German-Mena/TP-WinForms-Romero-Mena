@@ -291,5 +291,10 @@ namespace TP_WinForms
                 cboCriterio.Items.Add("Contiene");
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dgvArticulos.DataSource = listaArticulos;
+        }
     }
 }
